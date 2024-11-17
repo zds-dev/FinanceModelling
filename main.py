@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from dateutil.relativedelta import relativedelta
 import datetime as dt
 
-predict_from = dt.datetime(2021, 1, 1)
+predict_from = dt.datetime(2015, 1, 1)
 predict_to = dt.datetime(2030, 1, 1)
 
 # A sample of the power of this code. Working on a student loan calculator - aim to decide whether it is

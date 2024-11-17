@@ -4,7 +4,9 @@ from personalfinancetoolbox.helpers import date_range
 
 
 def apply_payment_into_asset(asset, payoff_amount, payoff_date):
+    # Apply a payment into an asset at a set date.
     if payoff_date in asset.value.keys():
+        # If the date already in the
         asset.value[payoff_date] += payoff_amount
     else:
         asset.value[payoff_date] = asset.get_value(payoff_date) + payoff_amount
@@ -16,7 +18,6 @@ def apply_regular_payment_into_asset(asset, regular_amount, interval, from_date,
     # apply regular payments into asset from from_date to to_date
     for date in date_range(from_date, to_date, interval):
         asset = apply_payment_into_asset(asset, regular_amount, date)
-
 
 def apply_regular_payment_into_debt(debt, regular_amount, interval, from_date, to_date):
     rem = 0

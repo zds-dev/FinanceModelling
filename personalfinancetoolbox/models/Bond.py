@@ -1,4 +1,4 @@
-from personalfinancetoolbox.models.InterestAccruingAsset import InterestAccruingAsset
+from .InterestAccruingAsset import InterestAccruingPeriodic
 from personalfinancetoolbox.models.Asset import Asset
 class Bond(InterestAccruingAsset):
     def __init__(self, name, value, start_date, coupon_rate, maturity_date):

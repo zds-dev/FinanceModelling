@@ -23,8 +23,10 @@ class ValueHolding(ABC):
     def get_value(self, date):
         raise NotImplementedError
 
-    def generate_timeseries(self, to_datetime, from_datetime, discretization: relativedelta = relativedelta(years=1)):
-        time_list = np.array(list(date_range(from_datetime, to_datetime, discretization)))
+    def generate_timeseries(self, to_datetime, from_datetime,
+                            spacing: relativedelta = relativedelta(years=1)):
+
+        time_list = np.array(list(date_range(from_datetime, to_datetime, spacing)))
         return np.array([self.get_value(date) for date in time_list]), time_list
 
 
